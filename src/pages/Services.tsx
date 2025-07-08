@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { FileCheck, Award, Shield, TrendingUp, CheckCircle, ArrowRight, Zap, Target, Users } from "lucide-react";
@@ -116,17 +115,19 @@ const Services = () => {
       <section className="py-24 relative">
         {/* Background Image */}
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-8"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-25 blur-sm"
           style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1649972904349-6e44c42644a7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=8256&q=80')"
+            backgroundImage: "url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=6000&q=80')"
           }}
         />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {services.map((service, index) => (
-              <Card key={index} className="group relative overflow-hidden border-0 shadow-xl hover:shadow-2xl transition-all duration-500 bg-white">
-                <div className={`absolute inset-0 bg-gradient-to-br ${service.bgGradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
-                <CardHeader className="relative z-10 pb-6">
+              <Card key={index} className="group relative overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 bg-white">
+                {/* Add a semi-transparent overlay for theme-matching opacity */}
+                <div className="absolute inset-0 bg-gradient-to-br from-green-200/70 via-blue-200/60 to-white/70 opacity-70 pointer-events-none z-0" />
+                <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
+                <CardHeader className="relative z-10 pb-4">
                   <div className={`inline-flex items-center justify-center w-20 h-20 rounded-3xl bg-gradient-to-br ${service.gradient} mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
                     <service.icon className="h-10 w-10 text-white" />
                   </div>
@@ -146,7 +147,7 @@ const Services = () => {
                       </div>
                     ))}
                   </div>
-                  <Button variant="ghost" className="p-0 h-auto font-semibold text-blue-600 hover:text-blue-800 hover:bg-blue-50 group-hover:translate-x-2 transition-all duration-300 text-lg px-4 py-2 rounded-lg">
+                  <Button variant="ghost" className="p-0 h-auto font-semibold text-blue-800 bg-blue-50 hover:text-blue-900 hover:bg-blue-100 group-hover:translate-x-2 transition-all duration-300 text-lg px-4 py-2 rounded-lg">
                     Learn More <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </CardContent>
@@ -165,7 +166,7 @@ const Services = () => {
             backgroundImage: "url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=7952&q=80')"
           }}
         />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(59,130,246,0.1),transparent_70%)]"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-200/95 via-blue-300/90 to-white/90 opacity-95 pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center mb-16">
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-green-100 to-blue-100 text-green-800 font-semibold mb-6">
@@ -214,6 +215,8 @@ const Services = () => {
             backgroundImage: "url('https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=5304&q=80')"
           }}
         />
+        {/* Add a semi-transparent overlay for theme-matching opacity */}
+        <div className="absolute inset-0 bg-gradient-to-br from-green-200/95 via-green-300/90 to-white/90 opacity-95 pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center mb-16">
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-purple-100 to-pink-100 text-purple-800 font-semibold mb-6">

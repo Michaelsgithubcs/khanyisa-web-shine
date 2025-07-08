@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -153,7 +152,7 @@ const Home = () => {
                   <CardDescription className="text-gray-600 text-lg leading-relaxed">
                     {service.description}
                   </CardDescription>
-                  <Button variant="ghost" className="mt-4 p-0 h-auto font-semibold text-blue-600 hover:text-blue-800 hover:bg-blue-50 group-hover:translate-x-2 transition-all duration-300 px-4 py-2 rounded-lg">
+                  <Button variant="ghost" className="mt-4 p-0 h-auto font-semibold text-blue-800 bg-blue-50 hover:text-blue-900 hover:bg-blue-100 group-hover:translate-x-2 transition-all duration-300 px-4 py-2 rounded-lg">
                     Learn More <ArrowRight className="ml-1 h-4 w-4" />
                   </Button>
                 </CardContent>
@@ -242,6 +241,8 @@ const Home = () => {
             backgroundImage: "url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=6000&q=80')"
           }}
         />
+        {/* Add a semi-transparent overlay for theme-matching opacity */}
+        <div className="absolute inset-0 bg-gradient-to-br from-yellow-100/90 via-orange-100/80 to-white/90 opacity-95 pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center mb-16">
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-yellow-100 to-orange-100 text-yellow-800 font-semibold mb-4">
